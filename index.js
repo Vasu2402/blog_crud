@@ -34,7 +34,7 @@ const db = mongoose.connection;
 db.once("open", () => {
   console.log("MongoDB connection successful...");
   app.listen(port, () => {
-    console.log("Server is running on port http://localhost:3013/blogs");
+    console.log("Server is running on port http://localhost:3013");
   });
 });
 
