@@ -124,7 +124,7 @@ const addComment = async (req, res) => {
 
     // Add the comment to the comments array
     blog.comments.push({
-      user: user,  
+      user: "user",  
       comment: comment,
     });
 
