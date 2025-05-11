@@ -132,6 +132,29 @@ const addComment = async (req, res) => {
   }
 };
 
+ // Search for blogs containing the query in title or content
+const searchBlogs = async (req, res) => {
+  try {
+    const query = req.query.query || req.query.q;  
+    if (!query) {
+      return res.redirect('/blogs'); 
+    }
+
+    const results = await Blog.find({
+      $or: [
+        { title: { $regex: query, $options: 'i' } },  // case-insensitive search
+        { content: { $regex: query, $options: 'i' } },
+         { tags: { $regex: query, $options: 'i' } }
+      ]
+    });
+
+    res.render('searchResults', { blogs: results, query }); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+};
+
 
 
 
@@ -144,5 +167,6 @@ module.exports = {
   deleteBlog,
   likeBlog,
   getComments,
-  addComment
+  addComment,
+  searchBlogs
 };

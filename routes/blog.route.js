@@ -9,7 +9,8 @@ const {
   deleteBlog,
   likeBlog,
   getComments,
-  addComment
+  addComment,
+  searchBlogs
 } = require("../controllers/blog.controller");
 
 // View all blogs
@@ -39,6 +40,8 @@ router.get("/:id/comments", getComments);
 // Add a comment to a specific blog post
 router.post("/:id/comments", addComment);
 
+// Search for blogs
+router.get("/search",searchBlogs);
 
 
 
