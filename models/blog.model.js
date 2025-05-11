@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const blogSchema = mongoose.Schema(
+const blogSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -33,7 +33,6 @@ const blogSchema = mongoose.Schema(
       {
         user: {
           type: String,
-          
           required: true,
         },
         comment: {
@@ -46,6 +45,7 @@ const blogSchema = mongoose.Schema(
         },
       },
     ],
+    
   },
   {
     timestamps: true,

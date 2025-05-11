@@ -21,7 +21,7 @@ const createBlog = async (req, res) => {
     const { title, content, author, tags } = req.body;
     const tagArray = tags ? tags.split(",").map(t => t.trim()) : [];
     await Blog.create({ title, content, author, tags: tagArray });
-    res.redirect("/blogs");
+    res.redirect(`/update-success?message=Blog added successfully`);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -60,7 +60,7 @@ const updateBlog = async (req, res) => {
     });
   
 
-    res.redirect("/blogs");
+    res.redirect(`/update-success?message=Blog updated successfully`);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -70,7 +70,7 @@ const updateBlog = async (req, res) => {
 const deleteBlog = async (req, res) => {
   try {
     await Blog.findByIdAndDelete(req.params.id);
-    res.redirect("/blogs");
+    res.redirect(`/update-success?message=Blog deleted successfully`);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -112,32 +112,27 @@ const getComments = async (req, res) => {
 
 // Add a comment to a specific blog post
 const addComment = async (req, res) => {
-  const { id } = req.params;  // Blog ID
-  const { user } = req.body;  // User from form
-  const { comment } = req.body;  // Comment from form
+  const { id } = req.params; 
+  const { comment } = req.body;  
 
   try {
     const blog = await Blog.findById(id);
     if (!blog) {
       return res.status(404).send("Blog not found");
     }
-
-    // Add the comment to the comments array
     blog.comments.push({
-      user: user,  
+      user: "user",  
       comment: comment,
     });
-
-    // Save the blog document
     await blog.save();
-
-    // Redirect back to the comments page of the blog
     res.redirect(`/blogs/${id}/comments`);
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 };
+
+
 
 
 module.exports = {

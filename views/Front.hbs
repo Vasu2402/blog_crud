@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlogVerse Landing</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <style>
+    body {
+      background: url('https://wallpapercave.com/wp/wp9983504.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .bg-glass {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #0dcaf0;
+    }
+    .feature-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-box:hover .feature-icon {
+    color: #8f9da0; 
+    transform: scale(1.2);
+    transition: transform 0.3s, color 0.3s;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">BlogVerse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs/create">Write</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="vh-100 d-flex align-items-center bg-glass text-white text-center">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-3 fw-bold">Welcome to <span class="text-info">BlogVerse</span></h1>
+          <p class="lead mt-3 mb-4">Your platform to express, explore, and connect through powerful storytelling.</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="/blogs" class="btn btn-info btn-lg px-4">
+              <i class="fas fa-book-reader me-2"></i> Explore Blogs
+            </a>
+            <a href="/blogs/create" class="btn btn-outline-light btn-lg px-4">
+              <i class="fas fa-pen me-2"></i> Start Writing
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5 text-center text-white bg-dark bg-opacity-75">
+    <div class="container">
+      <h2 class="mb-5 fw-bold" data-aos="fade-up">Why Choose BlogVerse?</h2>
+<div class="row g-4">
+  <div class="col-md-4" data-aos="fade-right">
+    <div class="p-4 feature-box">
+      <div class="feature-icon mb-3"><i class="fas fa-feather-alt"></i></div>
+      <h5 class="fw-semibold">Express Freely</h5>
+      <p>Write on any topic you love. Share your voice with the world without limits.</p>
+    </div>
+  </div>
+  <div class="col-md-4" data-aos="fade-up">
+    <div class="p-4 feature-box">
+      <div class="feature-icon mb-3"><i class="fas fa-globe"></i></div>
+      <h5 class="fw-semibold">Global Reach</h5>
+      <p>Your blogs are visible to everyone—grow your audience from anywhere.</p>
+    </div>
+  </div>
+  <div class="col-md-4" data-aos="fade-left">
+    <div class="p-4 feature-box">
+      <div class="feature-icon mb-3"><i class="fas fa-users"></i></div>
+      <h5 class="fw-semibold">Community Driven</h5>
+      <p>Join a thriving community of readers and writers who value real stories.</p>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5 bg-glass text-center text-white">
+    <div class="container" data-aos="zoom-in">
+      <h2 class="fw-bold mb-4">Ready to share your story?</h2>
+      <a href="/blogs/create" class="btn btn-lg btn-success px-5">
+        <i class="fas fa-pencil-alt me-2"></i> Write Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-4 bg-dark bg-opacity-75">
+    <p class="mb-0">&copy; 2025 BlogVerse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script>
+</body>
+</html>

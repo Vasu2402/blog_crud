@@ -13,7 +13,7 @@ const {
 } = require("../controllers/blog.controller");
 
 // View all blogs
-router.get("/", getBlogs); // → Renders blog-list.hbs
+router.get("/", getBlogs); 
 
 // Render create form
 router.get("/create", renderCreateForm);
@@ -28,7 +28,7 @@ router.get("/:id/edit", renderEditForm);
 router.post("/update/:id", updateBlog);
 
 // Handle deletion
-router.post("/:id/delete", deleteBlog);
+router.get("/:id/delete", deleteBlog);
 
 // Handle liking a blog
 router.post("/:id/like", likeBlog);
@@ -38,5 +38,8 @@ router.get("/:id/comments", getComments);
 
 // Add a comment to a specific blog post
 router.post("/:id/comments", addComment);
+
+
+
 
 module.exports = router;

@@ -18,7 +18,12 @@ hbs.registerPartials(__dirname + '/views/partials', function (err) {});
 
 
 app.get("/", (req, res) => {
-  res.send("Hello from Blog API Server");
+ res.render("Front");
+});
+
+app.get('/update-success', (req, res) => {
+  const message = req.query.message || 'No message'; 
+  res.render('update-success', { message: message }); 
 });
 
 app.use("/blogs", blogRoutes);
@@ -29,10 +34,9 @@ const db = mongoose.connection;
 db.once("open", () => {
   console.log("MongoDB connection successful...");
   app.listen(port, () => {
-    console.log("Server is running on port 3013");
+    console.log("Server is running on port http://localhost:3013/blogs");
   });
 });
-
 
 
 
